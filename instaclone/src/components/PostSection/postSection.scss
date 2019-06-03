@@ -1,0 +1,30 @@
+.post-container{
+
+    .post-header{
+        background:blue;
+        display:flex;
+        align-items: center;
+    
+        .post-user-url{
+            width:30px;
+            height:30px;
+            border-radius:50%;
+        }
+    
+        .post-username{
+            padding-left:.5em;
+        }
+    }
+
+    .post-image{
+        width:100%;
+        padding:2px;
+    }
+
+    .post-status-container{
+        display:flex;
+        flex-direction: column;
+        background:red;
+    }
+}
+
