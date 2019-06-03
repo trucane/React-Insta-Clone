@@ -11,7 +11,6 @@ const list = {
 function App() {
   return (
     <div className="App">
-      {console.log('I come from App.js',dummyData)}
       <SearchBar  data={list.rinstagram}/>
       <PostSection data={list.rinstagram} />
     </div>

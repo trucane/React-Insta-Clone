@@ -1,9 +1,9 @@
 .post-container{
 
     .post-header{
-        background:blue;
         display:flex;
         align-items: center;
+        padding:.3em 1em;
     
         .post-user-url{
             width:30px;
@@ -19,12 +19,13 @@
     .post-image{
         width:100%;
         padding:2px;
+        box-sizing: border-box;
     }
 
     .post-status-container{
         display:flex;
         flex-direction: column;
-        background:red;
+        padding:.3em 1em;
     }
 }
 

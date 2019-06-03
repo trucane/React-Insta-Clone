@@ -9,7 +9,7 @@ const PostSectionStatus = (props) =>{
                 <span className="stat-icon">com</span>
             </div>
             <div className="status-likes">
-                {props.data.likes}
+                <strong>{props.data.likes} </strong>
             </div>
         </div>
     )
