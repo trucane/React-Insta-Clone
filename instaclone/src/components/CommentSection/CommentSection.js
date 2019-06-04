@@ -9,8 +9,7 @@ const CommentSection =(props) =>{
         <div className="post-comment">
             <strong>{props.comments.username}</strong>
             <span className="spacer">{props.comments.text} </span>
-            {props.comments.timestamp}
-            {/* {moment().startOf(props.comments.timestamp).fromNow()} */}
+             {moment().startOf('hour').fromNow()}
          </div>
 
         

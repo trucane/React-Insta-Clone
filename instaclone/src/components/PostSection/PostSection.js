@@ -41,7 +41,7 @@ PostSection.prototypes ={
                     text: ProtoTypes.string.isRequired,
                     username: ProtoTypes.string.isRequired,
                 })
-            )
+            ).isRequired
 
         })
     )

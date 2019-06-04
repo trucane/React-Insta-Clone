@@ -8,13 +8,24 @@ const list = {
   rinstagram:dummyData
 }
 
-function App() {
-  return (
-    <div className="App">
-      <SearchBar  data={list.rinstagram}/>
-      <PostSection data={list.rinstagram} />
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      rinstagram:dummyData
+    }
+  }
+
+  render(){
+
+    return (
+      <div className="App">
+        <SearchBar  data={this.state.rinstagram}/>
+        <PostSection data={this.state.rinstagram} />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,7 +1,19 @@
 .search-bar-container{
-    background:red;
+    background:white;
     display:flex;
     justify-content: space-around;
     align-items:center;
     box-sizing: border-box;
+
+    .search-logo{
+        display:flex;
+        align-items: center;
+        .icon{
+            width:25px;
+        }
+
+        .iconimg{
+            width:50px;
+        }
+    }
 }
