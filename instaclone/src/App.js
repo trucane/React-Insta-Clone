@@ -3,7 +3,9 @@ import './App.scss';
 import {dummyData} from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostSection/PostContainer';
+import PostPage from './components/PostSection/PostPage';
 import PropTypes from 'prop-types';
+import withAuthenticate from './authentication/withAuthenticate';
 
 class App extends React.Component {
   
@@ -51,6 +53,8 @@ class App extends React.Component {
 
         <PostContainer data={this.state.data} filteredPosts={this.state.filteredPosts}
         searchFilter={this.searchFilter}/>
+
+        <PostPage />
       </div>
     );
   }
