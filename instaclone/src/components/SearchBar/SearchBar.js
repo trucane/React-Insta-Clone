@@ -17,8 +17,8 @@ const SearchBar = (props) =>{
             <div className="search-icons">
             <p>
                 <span>icon</span>
-                <span className="icon"><i class="far fa-heart"></i></span>
-                <span className="icon"><i class="far fa-user"></i></span>
+                <span className="icon"><i className="far fa-heart"></i></span>
+                <span className="icon"><i className="far fa-user"></i></span>
             </p>
             </div>
         </div>

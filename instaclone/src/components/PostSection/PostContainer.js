@@ -1,29 +1,23 @@
 import React from 'react';
-import PostSectionImage from './postSectionImage';
-import PostSectionStatus from './postSectionStatus';
-import PostSectionHeader from './postSectionHeader';
-import './postSection.scss';
+import PostSection from './PostSection';
+import CommentSection from '../CommentSection/CommentSection';
 
 
 
+class PostContainer extends React.Component{
 
-
-
-
-
-const PostSection = (props) => {
-
-
-    return(
-        <>
-        <PostSectionHeader data={props.data}/>
-        <PostSectionImage data={props.data}/>
-        <PostSectionStatus data={props.data}/>
-        </>
-    )
-
+    render(){
+        return(
+            this.props.data.map( post => (
+                <div key={post.id} className="post-container">
+                    <PostSection data={post}/>
+                    <CommentSection comments={post.comments} timestamp={post.timestamp}/>
+                </div>
+            ))
+    
+        )
+    }
 }
-
 
 // PostSection.prototypes ={
 //     post: PropTypes.arrayOf(
@@ -46,4 +40,6 @@ const PostSection = (props) => {
 //     )
 // };
 
-export default PostSection;
+
+
+export default PostContainer
