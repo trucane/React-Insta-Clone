@@ -18,7 +18,7 @@ const PostSection = (props) => {
         <>
         <PostSectionHeader data={props.data}/>
         <PostSectionImage data={props.data}/>
-        <PostSectionStatus data={props.data}/>
+        <PostSectionStatus data={props.data.likes}/>
         </>
     )
 

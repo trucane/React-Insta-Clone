@@ -8,7 +8,9 @@ import PropTypes from 'prop-types';
 class App extends React.Component {
   
   state = {
-    data:[]
+    data:[],
+    search:'',
+    filteredPosts:[]
   }
 
 
@@ -18,13 +20,37 @@ class App extends React.Component {
     })
   }
 
+  searchFilter = (e) =>{
+    console.log(e.target.value)
+    const filtered = this.state.data.filter( post => 
+
+      post.username.toLowerCase().includes(e.target.value.toLowerCase()))
+
+      console.log(filtered)
+      
+      this.setState({filteredPosts: filtered});
+  }
+
+  handleSearch = (event) =>{
+    this.setState({ 
+            [event.target.name]:event.target.value 
+    });
+};
+
+
+
   render(){
   
   
     return (
       <div className="App">
-        <SearchBar/>
-        <PostContainer data={this.state.data}/>
+        <SearchBar 
+        searchFilter={this.searchFilter} 
+        searching={this.state.search}
+        />
+
+        <PostContainer data={this.state.data} filteredPosts={this.state.filteredPosts}
+        searchFilter={this.searchFilter}/>
       </div>
     );
   }
