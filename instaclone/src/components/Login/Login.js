@@ -2,28 +2,49 @@ import React from 'react';
 
 
 
-const Login = () =>{
+class Login extends React.Component{
 
-    const login = () =>{
-        localStorage.setItem('username', 'username');
-        localStorage.setItem('isLoggedIn', true);
+    state = {
+        data:this.props.data,
+        username:''
     }
 
 
-    return (
-        <form>
-            <h1>Login Page</h1>
-            <div>
-                <input type="text" name="username"  placeholder="username" />
-            </div>
+    render(){
 
-            <div>
-                <input type="password" name="password"  placeholder="password" />
-            </div>
+        const login = () =>{
+            localStorage.setItem('username', this.state.username);
+            localStorage.setItem('isLoggedIn', true);
+        }
 
-            <button onClick={login}>Login Button</button>
-        </form>
-    )
+        const handleUserName = (e) =>{
+            console.log(e.target.value)
+            return this.setState({
+                [e.target.name]: e.target.value
+            })
+        }
+    
+    
+        return (
+            <form onSubmit={login}>
+                <h1>Login Page</h1>
+                <div>
+                    <input 
+                    type="text" 
+                    name="username"
+                    onChange={handleUserName}  
+                    placeholder="username" 
+                    value={this.state.username} />
+                </div>
+    
+                <div>
+                    <input type="password" name="password"  placeholder="password" />
+                </div>
+    
+                <button>Login Button</button>
+            </form>
+        )
+    }
 }
 
 

@@ -15,9 +15,8 @@ class CommentSection extends React.Component{
 
         addNewComment = e =>{
                 e.preventDefault();
-      
                 const newPost = {
-                    username:'New User',
+                    username:localStorage.getItem('username'),
                     id:Date.now(),
                     text:this.state.newComment
                 }
