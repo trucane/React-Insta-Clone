@@ -1,37 +1,12 @@
-.post-container{
-    background:white;
-    margin-bottom:.7em;
-    padding-bottom:.5em;
-    .post-header{
-        display:flex;
-        align-items: center;
-        padding:.3em 1em;
-    
-        .post-user-url{
-            width:30px;
-            height:30px;
-            border-radius:50%;
-        }
-    
-        .post-username{
-            padding-left:.5em;
-        }
-    }
 
-    .post-image{
-        width:100%;
-        padding:2px;
-        box-sizing: border-box;
-    }
+    
 
-    .post-status-container{
-        display:flex;
-        flex-direction: column;
-        padding:.3em 1em;
+   
 
         .stat-icon{
+            color:red;
+        }
+
+        .stat-icons{
             margin-left:10px;
         }
-    }
-}
-

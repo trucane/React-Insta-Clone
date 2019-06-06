@@ -1,14 +1,15 @@
 import React from 'react';
 import './postSection.scss';
+import {Header, Avatar, HeaderUsername} from '../../ComponentStyles/ComponentStyles';
 
 
 
 const PostSectionHeader = (props) =>{
     return(
-        <div className="post-header">
-            <img src={props.data.thumbnailUrl} alt={props.data.username} className="post-user-url"/>
-            <p className="post-username">{props.data.username}</p>
-        </div>
+        < Header>
+            <Avatar src={props.data.thumbnailUrl} alt={props.data.username}/>
+            <HeaderUsername className="post-username">{props.data.username}</HeaderUsername>
+        </Header>
     )
 }
 

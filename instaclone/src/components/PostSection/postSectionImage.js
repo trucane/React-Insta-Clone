@@ -1,9 +1,10 @@
 import React from 'react';
+import {PostImage} from '../../ComponentStyles/ComponentStyles';
 
 
 const PostSectionImage = (props) =>{
     return(
-        <img className="post-image" src={props.data.imageUrl} alt="post look"/>
+        <PostImage src={props.data.imageUrl} alt="post look"/>
     )
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PostSection from './PostSection';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+import {Postcontainer} from '../../ComponentStyles/ComponentStyles';
 
 
 
@@ -10,15 +11,15 @@ class PostContainer extends React.Component{
     render(){
         return(
             this.props.filteredPosts.length === 0 ? this.props.data.map( post => (
-                <div key={post.id} className="post-container">
+                <Postcontainer key={post.id} className="post-container">
                     <PostSection data={post}/>
                     <CommentSection comments={post.comments} timestamp={post.timestamp}/>
-                </div>
+                </Postcontainer>
             )) : this.props.filteredPosts.map( post => (
-                <div key={post.id} className="post-container">
+                <Postcontainer key={post.id} className="post-container">
                     <PostSection data={post}/>
                     <CommentSection comments={post.comments} timestamp={post.timestamp}/>
-            </div> ))
+            </Postcontainer> ))
     
         )
     }

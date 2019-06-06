@@ -1,4 +1,5 @@
 import React from 'react';
+import {PostStatusContainer} from '../../ComponentStyles/ComponentStyles';
 import './postSection.scss';
 
 class PostSectionStatus extends React.Component{
@@ -19,15 +20,15 @@ class PostSectionStatus extends React.Component{
     render(){
 
         return(
-            <div className="post-status-container">
-                <div className="status-icons">
-                    <span onClick={this.likePost} ><i className="far fa-heart"></i></span>
-                    <span className="stat-icon"><i className="far fa-comment"></i></span>
+            <PostStatusContainer>
+                <div>
+                    <span className="stat-icon" onClick={this.likePost} ><i className="fas fa-heart"></i></span>
+                    <span className="stat-icons"><i className="fas fa-comment"></i></span>
                 </div>
                 <div className="status-likes">
                     <strong>{this.state.likes} likes</strong>
                 </div>
-            </div>
+            </PostStatusContainer>
         )
     }
 }

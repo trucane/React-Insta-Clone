@@ -1,5 +1,11 @@
 import React from 'react';
 
+import {Button, Input, LoginForm} from '../../ComponentStyles/ComponentStyles';
+
+
+
+
+
 
 
 class Login extends React.Component{
@@ -12,9 +18,14 @@ class Login extends React.Component{
 
     render(){
 
-        const login = () =>{
-            localStorage.setItem('username', this.state.username);
-            localStorage.setItem('isLoggedIn', true);
+        const login = (e) =>{
+            if(this.state.username.trim() === ''){
+                e.preventDefault()
+            }else{
+
+                localStorage.setItem('username', this.state.username);
+                localStorage.setItem('isLoggedIn', true);
+            }
         }
 
         const handleUserName = (e) =>{
@@ -26,10 +37,10 @@ class Login extends React.Component{
     
     
         return (
-            <form onSubmit={login}>
+            <LoginForm onSubmit={login} >
                 <h1>Login Page</h1>
                 <div>
-                    <input 
+                    <Input 
                     type="text" 
                     name="username"
                     onChange={handleUserName}  
@@ -38,11 +49,10 @@ class Login extends React.Component{
                 </div>
     
                 <div>
-                    <input type="password" name="password"  placeholder="password" />
+                    <Input type="password" name="password"  placeholder="password" />
                 </div>
-    
-                <button>Login Button</button>
-            </form>
+                <Button type="primary">Login Button</Button>
+            </LoginForm>
         )
     }
 }

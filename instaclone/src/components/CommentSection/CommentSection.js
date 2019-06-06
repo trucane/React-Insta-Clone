@@ -2,6 +2,7 @@ import React from 'react';
 import './commentSection.scss';
 import moment from 'moment';
 
+import {CommentCont,Commenter,Comment,Commenttext, Input} from '../../ComponentStyles/ComponentStyles';
 
 
 
@@ -44,17 +45,20 @@ class CommentSection extends React.Component{
    
 render(){
         return(
-                <div>
+                <CommentCont>
+                        <Comment>
                         {this.state.comments.map(comment =>(
                                 <div key={comment.id}>
-                                <span>{comment.username}</span>
-                                <span>{comment.text}</span>
+                                <Commenter>{comment.username}</Commenter>
+                                <Commenttext>{comment.text} {comment.id}</Commenttext>
                                 </div>
                         ))}
 
+                        </Comment>
+
                         <form onSubmit={(e) => this.addNewComment(e)}>
-                                <input  
-                                type="text" 
+                                <Input  
+                                type="ciInput" 
                                 name="newComment" 
                                 value={this.state.newComment}  
                                 placeholder="add comment" 
@@ -66,7 +70,7 @@ render(){
                         </p>
 
 
-                </div>  
+                </CommentCont>  
         )
 }
     
