@@ -1,9 +1,20 @@
 import React from 'react';
 
 
-const PostPage = () =>{
+const PostPage = (props) =>{
+
+
+    const logout = () =>{
+        localStorage.removeItem( 'username')
+        localStorage.removeItem('isLoggedIn')
+    }
+
     return(
-        <div>This is a post page</div>
+        <div>
+            <form>
+                <button onClick={logout}>log out</button>
+            </form>
+        </div>
     )
 }
 

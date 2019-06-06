@@ -6,20 +6,29 @@ import PostContainer from './components/PostSection/PostContainer';
 import PostPage from './components/PostSection/PostPage';
 import PropTypes from 'prop-types';
 import withAuthenticate from './authentication/withAuthenticate';
+import Login from './components/Login/Login';
+
+
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(Login);
+
 
 class App extends React.Component {
   
   state = {
     data:[],
     search:'',
-    filteredPosts:[]
+    filteredPosts:[],
+    isLoggedIn:false
   }
 
 
   componentDidMount(){
-    return this.setState({
-      data:dummyData
-    })
+    if(localStorage.getItem('isLoggedIn')){
+      return this.setState({
+        data:dummyData
+      })
+    }
   }
 
   searchFilter = (e) =>{
@@ -41,20 +50,26 @@ class App extends React.Component {
 
 
 
+
   render(){
   
-  
+   
+     
+
+    
+    
     return (
       <div className="App">
+
+        <ComponentFromWithAuthenticate data={this.state.data} filteredPosts={this.state.filteredPosts }/>
+
         <SearchBar 
-        searchFilter={this.searchFilter} 
-        searching={this.state.search}
-        />
-
-        <PostContainer data={this.state.data} filteredPosts={this.state.filteredPosts}
-        searchFilter={this.searchFilter}/>
-
-        <PostPage />
+          searchFilter={this.searchFilter} 
+          searching={this.state.search}
+          />
+    
+          <PostContainer data={this.state.data} filteredPosts={this.state.filteredPosts}
+          searchFilter={this.searchFilter}/>
       </div>
     );
   }
